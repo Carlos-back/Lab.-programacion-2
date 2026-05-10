@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>1er Desempeño</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: NiceAdmin - v2.2.2
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  * 2025
+  ======================================================== -->
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/" target="_blank"
+        class="logo d-flex align-items-center" title="puedes descargar la template original desde aqui">
+        <img src="assets/img/logo.png" alt="2025">
+        <span class="d-none d-lg-block">NiceAdmin</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+        <li class="nav-item dropdown pe-3">
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="assets/img/en.jpg" alt="lang" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">DÓLARES</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="?moneda=dolar">
+                <i class="bi bi-currency-dollar"></i>
+                <span>Dólar Estadounidense</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="?moneda=peso">
+                <i class="bi bi-currency-dollar"></i>
+                <span>Peso Argentino</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav><!-- End Currency -->
+  </header><!-- End Header --> <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link " href="index.html">
+          <i class="bi bi-grid"></i>
+          <span>Home</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>Productos</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="listado.php">
+              <i class="bi bi-circle"></i><span>Los mas vendidos</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Components Nav -->
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+  <main id="main" class="main">
+    <div class="pagetitle">
+      <h1>Listado de Productos</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+          <li class="breadcrumb-item"><a href="#">Productos</a></li>
+          <li class="breadcrumb-item active">Los mas vendidos</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+    <section class="section dashboard">
+      <div class="row">
+        <!-- Left side columns -->
+        <div class="col-lg-12">
+          <div class="row">
+            <!-- Top Selling -->
+            <div class="col-12">
+              <div class="card top-selling overflow-auto">
+                <div class="card-body pb-0">
+                  <h5 class="card-title">Los mas vendidos</h5>
+                  <table class="table table-borderless">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Imagen</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">Stock Min.</th>
+                        <th scope="col" title="Stock Actual - Stock Min.">
+                          Diferencia Stock</th>
+                        <th scope="col">Precio Unit.</th>
+                        <th scope="col">Venta Web</th>
+                        <th scope="col">
+                          Monetario en stock
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <th scope="row">
+                          <a href="#">
+                            <img src="assets/img/reloj.jpg" title="#1234">
+                          </a>
+                        </th>
+                        <td>
+                          <a href="#" class="text-primary fw-bold">
+                            Led Adjustable Sports Bracelet Watch </a>
+                          <div class="progress mt-3">
+                            <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated"
+                              role="progressbar" style="width: 30%" title="Stock Actual 30">
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <h4>
+                            <span class="badge border-info border-1 text-info">
+                              20 </span>
+                          </h4>
+                        </td>
+                        <td>
+                          <h4>
+                            <span class="badge border-info border-1 text-info" title="30 - 20">
+                              10 </span>
+                          </h4>
+                        </td>
+                        <td>
+                          <h4>
+                            <span class="badge border-danger border-1 text-danger">
+                              U$S 6.99 </span>
+                          </h4>
+                        </td>
+                        <td>
+                          <h3>
+                            <span class="badge border-danger border-1 text-danger" title="No se permite venta web">
+                              <i class="bi bi-cart-x-fill"></i> </span>
+                          </h3>
+                        </td>
+                        <td>
+                          <h4>
+                            <span class="badge border-info border-1 text-info">
+                              U$S 209.7 </span>
+                          </h4>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <th scope="row">
+                          <a href="#">
+                            <img src="assets/img/auriculares1.jpg" title="#2345">
+                          </a>
+                        </th>
+                        <td>
+                          <a href="#" class="text-primary fw-bold">
+                            Wireless in-ear headphones Black </a>
+                          <div class="progress mt-3">
+                            <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated"
+                              role="progressbar" style="width: 40%" title="Stock Actual 40">
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <h4>
+                            <span class="badge border-info border-1 text-info">
+                              20 </span>
+                          </h4>
+                        </td>
+                        <td>
+                          <h4>
+                            <span class="badge border-info border-1 text-info" title="40 - 20">
+                              20 </span>
+                          </h4>
+                        </td>
+                        <td>
+                          <h4>
+                            <span class="badge border-warning border-1 text-warning">
+                              U$S 59.99 </span>
+                          </h4>
+                        </td>
+                        <td>
+                          <h3>
+                            <span class="badge border-warning border-1 text-warning" title="Se permite venta web">
+                              <i class="bi bi-cart4"></i> </span>
+                          </h3>
+                        </td>
+                        <td>
+                          <h4>
+                            <span class="badge border-info border-1 text-info">
+                              U$S 2399.6 </span>
+                          </h4>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <th scope="row">
+                          <a href="#">
+                            <img src="assets/img/auriculares2.jpg" title="#3456">
+                          </a>
+                        </th>
+                        <td>
+                          <a href="#" class="text-primary fw-bold">
+                            White wireless headset </a>
+                          <div class="progress mt-3">
+                            <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated"
+                              role="progressbar" style="width: 20%" title="Stock Actual 20">
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <h4>
+                            <span class="badge border-info border-1 text-info">
+                              25 </span>
+                          </h4>
+                        </td>
+                        <td>
+                          <h4>
+                            <span class="badge border-info border-1 text-info" title="20 - 25">
+                              -5 </span>
+                          </h4>
+                        </td>
+                        <td>
+                          <h4>
+                            <span class="badge border-danger border-1 text-danger">
+                              U$S 47.99 </span>
+                          </h4>
+                        </td>
+                        <td>
+                          <h3>
+                            <span class="badge border-danger border-1 text-danger" title="No se permite venta web">
+                              <i class="bi bi-cart-x-fill"></i> </span>
+                          </h3>
+                        </td>
+                        <td>
+                          <h4>
+                            <span class="badge border-info border-1 text-info">
+                              U$S 959.8 </span>
+                          </h4>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">4</th>
+                        <th scope="row">
+                          <a href="#">
+                            <img src="assets/img/soporte.jpg" title="#4567">
+                          </a>
+                        </th>
+                        <td>
+                          <a href="#" class="text-primary fw-bold">
+                            Extendable Support Cell Phone for Notebook </a>
+                          <div class="progress mt-3">
+                            <div class="progress-bar progress-bar-striped bg-success progress-bar-animated"
+                              role="progressbar" style="width: 80%" title="Stock Actual 80">
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <h4>
+                            <span class="badge border-info border-1 text-info">
+                              40 </span>
+                          </h4>
+                        </td>
+                        <td>
+                          <h4>
+                            <span class="badge border-info border-1 text-info" title="80 - 40">
+                              40 </span>
+                          </h4>
+                        </td>
+                        <td>
+                          <h4>
+                            <span class="badge border-success border-1 text-success">
+                              U$S 11.99 </span>
+                          </h4>
+                        </td>
+                        <td>
+                          <h3>
+                            <span class="badge border-success border-1 text-success" title="Se permite venta web">
+                              <i class="bi bi-cart4"></i> </span>
+                          </h3>
+                        </td>
+                        <td>
+                          <h4>
+                            <span class="badge border-info border-1 text-info">
+                              U$S 959.2 </span>
+                          </h4>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">5</th>
+                        <th scope="row">
+                          <a href="#">
+                            <img src="assets/img/funda.jpg" title="#5678">
+                          </a>
+                        </th>
+                        <td>
+                          <a href="#" class="text-primary fw-bold">
+                            Sports Case For iPhone Armband </a>
+                          <div class="progress mt-3">
+                            <div class="progress-bar progress-bar-striped bg-success progress-bar-animated"
+                              role="progressbar" style="width: 100%" title="Stock Actual 100">
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <h4>
+                            <span class="badge border-info border-1 text-info">
+                              45 </span>
+                          </h4>
+                        </td>
+                        <td>
+                          <h4>
+                            <span class="badge border-info border-1 text-info" title="100 - 45">
+                              55 </span>
+                          </h4>
+                        </td>
+                        <td>
+                          <h4>
+                            <span class="badge border-success border-1 text-success">
+                              U$S 47.99 </span>
+                          </h4>
+                        </td>
+                        <td>
+                          <h3>
+                            <span class="badge border-success border-1 text-success" title="Se permite venta web">
+                              <i class="bi bi-cart4"></i> </span>
+                          </h3>
+                        </td>
+                        <td>
+                          <h4>
+                            <span class="badge border-info border-1 text-info">
+                              U$S 4799 </span>
+                          </h4>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div><!-- End Top Selling -->
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card revenue-card">
+                <div class="card-body">
+                  <h5 class="card-title">PRODUCTOS <span>| Cantidad para la venta web</span></h5>
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-patch-check-fill"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>3</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card revenue-card">
+                <div class="card-body"><!--  Stock Actual * Precio -->
+                  <h5 class="card-title">Total <span>| Monetario en Stock</span></h5>
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-currency-dollar"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>
+                        U$S 9327.3
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- End Left side columns -->
+      </div>
+    </section>
+  </main>
+  </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working html/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files 2023-->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Template Main JS File 2023-->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
