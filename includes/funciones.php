@@ -64,7 +64,7 @@ function mostrarIconoVenta($diferencia, $color) {
 // ------------------------------------------------------------
 function calcularMonetario($stockActual, $precio, $moneda, $cotizacion) {
     $total = $stockActual * $precio;
-    if ($moneda === "peso") {
+    if ($moneda === "peso" || $moneda === "pesos") {
         $total = $total * $cotizacion;
     }
     return $total;
@@ -78,7 +78,7 @@ function calcularMonetario($stockActual, $precio, $moneda, $cotizacion) {
 // Retorna: string formateado  ej: "U$S 6.99"  o  "$ 10485"
 // ------------------------------------------------------------
 function mostrarPrecio($precio, $moneda, $cotizacion) {
-    if ($moneda === "peso") {
+    if ($moneda === "peso" || $moneda === "pesos") {
         $simbolo = "$";
         $valor   = $precio * $cotizacion;
         // Sin decimales para pesos
@@ -95,7 +95,7 @@ function mostrarPrecio($precio, $moneda, $cotizacion) {
 // Devuelve solo el símbolo según la moneda activa
 // ------------------------------------------------------------
 function mostrarSimboloMoneda($moneda) {
-    return ($moneda === "peso") ? "$" : "U\$S";
+    return ($moneda === "peso" || $moneda === "pesos") ? "$" : "U\$S";
 }
 
 
@@ -104,7 +104,7 @@ function mostrarSimboloMoneda($moneda) {
 // Formatea un número según la moneda (con o sin decimales)
 // ------------------------------------------------------------
 function formatearMonto($monto, $moneda) {
-    if ($moneda === "peso") {
+    if ($moneda === "peso" || $moneda === "pesos") {
         return number_format($monto, 0, ",", ".");
     } else {
         return number_format($monto, 1, ".", "");

@@ -6,7 +6,7 @@
 // ============================================================
 
 // Configuración visual según moneda activa
-if ($moneda === "peso") {
+if ($moneda === "peso" || $moneda === "pesos") {
     $bandera      = "assets/img/ar.png";
     $textoMoneda  = "PESOS";
 } else {
@@ -42,13 +42,13 @@ if ($moneda === "peso") {
                 <!-- Nota: el cambio de moneda se hace modificando $moneda en listado.php -->
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                     <li>
-                        <a class="dropdown-item d-flex align-items-center" href="#">
+                        <a class="dropdown-item d-flex align-items-center" href="listado.php?moneda=dolar">
                             <i class="bi bi-currency-dollar"></i>
                             <span>Dólar Estadounidense</span>
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item d-flex align-items-center" href="#">
+                        <a class="dropdown-item d-flex align-items-center" href="listado.php?moneda=peso">
                             <i class="bi bi-currency-dollar"></i>
                             <span>Peso Argentino</span>
                         </a>

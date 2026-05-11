@@ -9,7 +9,11 @@
 //      "dolar"  →  muestra precios en dólares (U$S)
 //      "peso"   →  muestra precios en pesos argentinos ($)
 // ------------------------------------------------------------
-$moneda     = "dolar";   // <-- cambiá aquí: "dolar" o "peso"
+if (isset($_GET['moneda'])) {
+    $moneda = $_GET['moneda'];
+} else {
+    $moneda = "dolar"; // Default
+}
 $cotizacion = 1500;      // Cotización estimativa dólar → peso
 
 // ------------------------------------------------------------
