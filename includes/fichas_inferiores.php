@@ -1,12 +1,3 @@
-<?php
-// ============================================================
-// includes/fichas.php
-// Sección de las fichas/tarjetas inferiores
-// Recibe: $cantVentaWeb, $totalMonetario, $moneda
-// ============================================================
-?>
-
-<!-- Ficha: Cantidad de productos para venta web -->
 <div class="col-xxl-4 col-md-6">
     <div class="card info-card revenue-card">
         <div class="card-body">
@@ -25,7 +16,6 @@
     </div>
 </div>
 
-<!-- Ficha: Total monetario en stock -->
 <div class="col-xxl-4 col-md-6">
     <div class="card info-card revenue-card">
         <div class="card-body">

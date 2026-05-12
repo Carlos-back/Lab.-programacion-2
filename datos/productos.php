@@ -1,8 +1,4 @@
 <?php
-// ============================================================
-// datos/productos.php
-// Array multidimensional con los datos de los productos
-// ============================================================
 
 $productos = [
     [

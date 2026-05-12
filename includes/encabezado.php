@@ -1,11 +1,4 @@
 <?php
-// ============================================================
-// includes/header.php
-// Sección del encabezado (<header>) de la página
-// Recibe: $moneda (para mostrar bandera e ícono correcto)
-// ============================================================
-
-// Configuración visual según moneda activa
 if ($moneda === "peso" || $moneda === "pesos") {
     $bandera      = "assets/img/ar.png";
     $textoMoneda  = "PESOS";
@@ -15,7 +8,6 @@ if ($moneda === "peso" || $moneda === "pesos") {
 }
 ?>
 
-<!-- ======= Header ======= -->
 <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
@@ -27,7 +19,7 @@ if ($moneda === "peso" || $moneda === "pesos") {
             <span class="d-none d-lg-block">NiceAdmin</span>
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
-    </div><!-- End Logo -->
+    </div>
 
     <nav class="header-nav ms-auto">
         <ul class="d-flex align-items-center">
@@ -39,7 +31,6 @@ if ($moneda === "peso" || $moneda === "pesos") {
                         <?php echo $textoMoneda; ?>
                     </span>
                 </a>
-                <!-- Nota: el cambio de moneda se hace modificando $moneda en listado.php -->
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                     <li>
                         <a class="dropdown-item d-flex align-items-center" href="listado.php?moneda=dolar">
@@ -56,6 +47,6 @@ if ($moneda === "peso" || $moneda === "pesos") {
                 </ul>
             </li>
         </ul>
-    </nav><!-- End Currency -->
+    </nav>
 
-</header><!-- End Header -->
+</header>

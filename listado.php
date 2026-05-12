@@ -1,38 +1,18 @@
 <?php
-// ============================================================
-// listado.php  —  Script principal
-// ============================================================
-
-// ------------------------------------------------------------
-// 1. CONFIGURACIÓN DE MONEDA
-//    Cambiar el valor de $moneda para alternar entre vistas:
-//      "dolar"  →  muestra precios en dólares (U$S)
-//      "peso"   →  muestra precios en pesos argentinos ($)
-// ------------------------------------------------------------
+//Cambio de moneda segun select
 if (isset($_GET['moneda'])) {
     $moneda = $_GET['moneda'];
 } else {
-    $moneda = "dolar"; // Default
+    $moneda = "dolar"; 
 }
-$cotizacion = 1500;      // Cotización estimativa dólar → peso
+$cotizacion = 1500;
 
-// ------------------------------------------------------------
-// 2. INCLUIR ARCHIVOS EXTERNOS
-//    require_once detiene la ejecución si el archivo no existe
-// ------------------------------------------------------------
 require_once "includes/funciones.php";
 require_once "datos/productos.php";
 
-// ------------------------------------------------------------
-// 3. PROCESAMIENTO: recorrer el array y acumular totales
-//    (se hace aquí para tener los acumuladores listos antes
-//     de incluir el HTML de las fichas inferiores)
-// ------------------------------------------------------------
-$cantVentaWeb   = 0;   // Contador de productos disponibles para venta web
-$totalMonetario = 0;   // Sumatoria del monetario en stock de todos los productos
+$cantVentaWeb   = 0;   // Contador de productos para venta web
+$totalMonetario = 0;   // Total
 
-// Pre-calculamos los datos de cada producto para usarlos
-// tanto en la tabla como en las fichas inferiores
 $filas = [];
 foreach ($productos as $num => $prod) {
 
@@ -40,13 +20,12 @@ foreach ($productos as $num => $prod) {
     $color       = obtenerColor($diferencia);
     $monetario   = calcularMonetario($prod["stockActual"], $prod["precio"], $moneda, $cotizacion);
 
-    // Acumuladores (proceso optimizado: se calculan en el mismo recorrido)
+    // Acumuladores
     if ($diferencia > 10) {
         $cantVentaWeb++;
     }
     $totalMonetario += $monetario;
 
-    // Guardamos los datos procesados para el renderizado
     $filas[] = [
         "num"        => $num + 1,
         "prod"       => $prod,
@@ -66,29 +45,24 @@ foreach ($productos as $num => $prod) {
     <meta content="" name="description">
     <meta content="" name="keywords">
 
-    <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-    <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
           rel="stylesheet">
 
-    <!-- Vendor CSS Files -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-
-    <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
 
-<?php require_once "includes/header.php"; ?>
+<?php require_once "includes/encabezado.php"; ?>
 
-<?php require_once "includes/sidebar.php"; ?>
+<?php require_once "includes/lateral.php"; ?>
 
     <main id="main" class="main">
 
@@ -101,14 +75,13 @@ foreach ($productos as $num => $prod) {
                     <li class="breadcrumb-item active">Los mas vendidos</li>
                 </ol>
             </nav>
-        </div><!-- End Page Title -->
+        </div>
 
         <section class="section dashboard">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="row">
 
-                        <!-- ===== TABLA DE PRODUCTOS ===== -->
                         <div class="col-12">
                             <div class="card top-selling overflow-auto">
                                 <div class="card-body pb-0">
@@ -138,7 +111,6 @@ foreach ($productos as $num => $prod) {
                                         ?>
                                             <tr>
 
-                                                <!-- # Número de fila -->
                                                 <th scope="row"><?php echo $num; ?></th>
 
                                                 <!-- Imagen con tooltip del código -->
@@ -213,28 +185,24 @@ foreach ($productos as $num => $prod) {
 
                                 </div>
                             </div>
-                        </div><!-- End Top Selling -->
-
-                        <!-- ===== FICHAS INFERIORES ===== -->
-                        <?php require_once "includes/fichas.php"; ?>
+                        </div>
+                        <?php require_once "includes/fichas_inferiores.php"; ?>
 
                     </div>
                 </div>
             </div>
         </section>
 
-    </main><!-- End #main -->
+    </main>
 
-<?php require_once "includes/footer.php"; ?>
+<?php require_once "includes/pie.php"; ?>
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
         <i class="bi bi-arrow-up-short"></i>
     </a>
 
-    <!-- Vendor JS Files -->
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
 
 </body>

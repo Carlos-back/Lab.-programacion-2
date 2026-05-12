@@ -1,27 +1,12 @@
 <?php
-// ============================================================
-// includes/funciones.php
-// Funciones propias del proyecto
-// ============================================================
+// Calcula la diferencia entre stock actual y stock minimo
 
-
-// ------------------------------------------------------------
-// calcularDiferencia()
-// Calcula la diferencia entre Stock Actual y Stock Mínimo
-// Retorna: número entero (puede ser negativo)
-// ------------------------------------------------------------
 function calcularDiferencia($stockActual, $stockMin) {
     return $stockActual - $stockMin;
 }
 
 
-// ------------------------------------------------------------
-// obtenerColor()
-// Devuelve la clase de Bootstrap según la diferencia de stock
-//   <= 10       → "danger"  (rojo)
-//   > 10 y < 30 → "warning" (amarillo)
-//   >= 30       → "success" (verde)
-// ------------------------------------------------------------
+// Devuelve la clase de bootstrap segun la dif de stock
 function obtenerColor($diferencia) {
     if ($diferencia <= 10) {
         return "danger";
@@ -33,12 +18,8 @@ function obtenerColor($diferencia) {
 }
 
 
-// ------------------------------------------------------------
-// mostrarIconoVenta()
+
 // Devuelve el HTML del ícono de carrito según disponibilidad
-//   diferencia <= 10  → carrito con X (no disponible)
-//   diferencia > 10   → carrito normal (disponible)
-// ------------------------------------------------------------
 function mostrarIconoVenta($diferencia, $color) {
     if ($diferencia <= 10) {
         $icono   = "bi-cart-x-fill";
@@ -56,12 +37,7 @@ function mostrarIconoVenta($diferencia, $color) {
 }
 
 
-// ------------------------------------------------------------
-// calcularMonetario()
-// Calcula el valor monetario en stock (Stock Actual × Precio)
-// Si la moneda es "peso", multiplica además por la cotización
-// Retorna: número float
-// ------------------------------------------------------------
+// calcular el valor monetario del stock
 function calcularMonetario($stockActual, $precio, $moneda, $cotizacion) {
     $total = $stockActual * $precio;
     if ($moneda === "peso" || $moneda === "pesos") {
@@ -70,13 +46,7 @@ function calcularMonetario($stockActual, $precio, $moneda, $cotizacion) {
     return $total;
 }
 
-
-// ------------------------------------------------------------
-// mostrarPrecio()
-// Formatea y devuelve el precio con el símbolo de moneda
-// Si la moneda es "peso", multiplica por la cotización
-// Retorna: string formateado  ej: "U$S 6.99"  o  "$ 10485"
-// ------------------------------------------------------------
+// muestra el precio segun la moneda
 function mostrarPrecio($precio, $moneda, $cotizacion) {
     if ($moneda === "peso" || $moneda === "pesos") {
         $simbolo = "$";
@@ -90,21 +60,15 @@ function mostrarPrecio($precio, $moneda, $cotizacion) {
 }
 
 
-// ------------------------------------------------------------
-// mostrarSimboloMoneda()
-// Devuelve solo el símbolo según la moneda activa
-// ------------------------------------------------------------
+// devuelve el simbolo de la moneda
 function mostrarSimboloMoneda($moneda) {
-    return ($moneda === "peso" || $moneda === "pesos") ? "$" : "U\$S";
+    return ($moneda === "peso") ? "$" : "U\$S";
 }
 
 
-// ------------------------------------------------------------
-// formatearMonto()
-// Formatea un número según la moneda (con o sin decimales)
-// ------------------------------------------------------------
+// Formatea un numero segun la moneda (con o sin decimales)
 function formatearMonto($monto, $moneda) {
-    if ($moneda === "peso" || $moneda === "pesos") {
+    if ($moneda === "peso") {
         return number_format($monto, 0, ",", ".");
     } else {
         return number_format($monto, 1, ".", "");
